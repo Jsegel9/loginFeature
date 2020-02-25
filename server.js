@@ -15,6 +15,11 @@ initializePassport(passport, email=>{
 const users = []
 
 app.use(express.urlencoded({ extended: true }));
+app.use(flash())
+app.use(session({
+    secret: process.env.SESSION_SECRET
+}))
+
 app.use(express.json());
 
 app.get('/', (req,res) => {
