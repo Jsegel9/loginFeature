@@ -34,7 +34,7 @@ app.use(methodOverride('_method'))
 app.use(express.json());
 
 app.get('/', checkAuthenticated, (req,res) => {
-    res.sendFile(path.join(__dirname + '/index.html'))
+    res.sendFile(path.join(__dirname + '/login.html'))
 })
 
 app.get('/login', checkNotAuthenticated, (req,res) =>{
